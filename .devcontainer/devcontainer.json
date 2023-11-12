@@ -1,0 +1,23 @@
+{
+	"name": "F# (.NET)",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-6.0-bullseye",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Ionide.Ionide-fsharp",
+				"ms-dotnettools.csharp"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.profile,target=/home/vscode/.profile,type=bind,consistency=cached"
+	]
+}
